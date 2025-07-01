@@ -1,0 +1,329 @@
+/*==============================
+  THEME COLORS (Light & Dark)
+===============================*/
+
+/* Base Theme Variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #212529;
+  --link-color: #0d6efd;
+  --link-hover-color: #0a58ca;
+  --table-hover-bg: rgba(0, 0, 0, 0.05);
+  --card-bg: #f8f9fa;
+}
+
+/*==============================
+  GLOBAL STYLING
+===============================*/
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+}
+
+/*==============================
+  NAVBAR & FOOTER
+===============================*/
+
+.navbar,
+footer {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  min-height: 64px;
+}
+
+footer {
+  background-color: #212529;
+  color: #f8f9fa;
+  font-size: 0.9rem;
+  padding: 20px 0;
+  width: 100%;
+  position: relative;
+}
+
+/*==============================
+  LOGO in NAVBAR
+===============================*/
+
+.logo-navbar {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+}
+/*==============================
+  SEARCH in NAVBAR
+===============================*/
+input:focus,
+textarea:focus,
+.form-control:focus {
+  box-shadow: none ;
+  outline: none;
+}
+
+
+.navbar-brand {
+  padding: 0 ;
+  margin: 0 ;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+/*==============================
+  HEADINGS
+===============================*/
+
+h1, h2, h3 {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+/*==============================
+  FORM INPUTS
+===============================*/
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+textarea {
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  padding: 10px;
+  background-color: #fff;
+  color: #212529;
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--link-color);
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.3);
+}
+
+/*==============================
+  BUTTONS
+===============================*/
+
+button, .btn {
+  border-radius: 6px ;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+}
+
+/*==============================
+  TABLES
+===============================*/
+
+.table thead th {
+  background-color: #343a40;
+  color: white;
+}
+
+.table-hover tbody tr:hover {
+  background-color: var(--table-hover-bg);
+  cursor: pointer;
+}
+
+/*==============================
+  MODAL
+===============================*/
+
+.modal-content {
+  border-radius: 10px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/*==============================
+  LINKS
+===============================*/
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/*==============================
+  IMAGE STYLING
+===============================*/
+
+
+
+
+
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Responsive logo image (e.g., in login/register right side) */
+.logo-wrapper img {
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  width: 200px;
+  height: 200px;
+}
+
+/*==============================
+  IMAGE HOVER EFFECTS
+===============================*/
+
+.hover-gray {
+  filter: grayscale(0);
+  transition: filter 0.5s ease-in-out;
+}
+
+.hover-gray:hover {
+  filter: grayscale(100%);
+}
+
+/* Logo transition effect */
+.logo-wrapper {
+  position: relative;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.logo-wrapper img {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hover-logo {
+  opacity: 0;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.logo-wrapper:hover .hover-logo {
+  opacity: 1;
+}
+
+.logo-wrapper:hover .main-logo {
+  opacity: 0;
+}
+
+/*==============================
+  MISC UTILITY CLASSES
+===============================*/
+
+.mt-5 {
+  margin-top: 3rem ;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem ;
+}
+
+.form-check-label {
+  cursor: pointer;
+}
+
+/* ==============================
+   DARK MODE STYLES
+   ============================== */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .navbar,
+body.dark-mode footer {
+  background-color: #1f1f1f !important;
+  color: #f1f1f1 !important;
+}
+
+body.dark-mode .table {
+  background-color: #1a1a1a;
+  color: #f1f1f1;
+}
+
+body.dark-mode .table td {
+  color: #ffffff !important;
+  background-color: #1f1f1f;
+}
+/* Make only table headers white in dark mode */
+body.dark-mode table th {
+  color: #ffffff !important;
+}
+
+/* Make only first column (row headers) in content form table black */
+body.dark-mode .content-form-table th[scope="row"] {
+  color: #ffffff !important;
+  background-color: #1f1f1f;
+}
+
+/* Make page title white in dark mode */
+body.dark-mode h1,
+body.dark-mode h2 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .table tbody tr {
+  color: #ffffff !important;
+}
+
+body.dark-mode .btn {
+  color: #ffffff !important;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: #ffffff;
+  color: #ffffff;
+  border-color: #666;
+}
+
+body.dark-mode .btn,
+body.dark-mode .btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: white;
+}
+
+body.dark-mode .modal-content {
+  background-color: #2a2a2a;
+  color: #f1f1f1;
+}
+
+body.dark-mode #addFormContainer input[type="text"],
+body.dark-mode #addFormContainer input[type="url"],
+body.dark-mode #addFormContainer textarea {
+  color: #000 !important;
+  background-color: #fff !important;
+  caret-color: #000 !important;
+}
+
+
