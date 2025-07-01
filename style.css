@@ -326,4 +326,10 @@ body.dark-mode #addFormContainer textarea {
   caret-color: #000 !important;
 }
 
-
+body.dark-mode #addFormContainer input[type="text"],
+body.dark-mode #addFormContainer input[type="url"],
+body.dark-mode #addFormContainer textarea {
+  color: #000 !important;
+  background-color: #fff !important;
+  caret-color: #000 !important;
+}
